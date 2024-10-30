@@ -16,3 +16,15 @@ my leetcode
     Type: array, two pointer
     Remove element also can move the others to the front, the element to the end.
     Time complexity is O(n)
+
+## 26. Remove Duplicates from Sorted Array
+    Type: array, two pointer
+    Begin to the index 1, because the first number is unique. Remove element also can move the others to the front, the element to the end.
+    Time complexity is O(n)
+
+## 80. Remove Duplicates from Sorted Array II
+    Type: array, two pointer
+    My solution is use a variable to count whether the number reaches 2
+    Another solution is similar to No.26
+    Begin to the index 1, because the first and second number is unique(whether is same or not). compare the current number with k - 2 number, Remove element also can move the others to the front, the element to the end.
+    Time complexity is O(n)
