@@ -28,3 +28,9 @@ my leetcode
     Another solution is similar to No.26
     Begin to the index 1, because the first and second number is unique(whether is same or not). compare the current number with k - 2 number, Remove element also can move the others to the front, the element to the end.
     Time complexity is O(n)
+
+## 169. Majority Element
+    Type: array
+    Boyer-Moore Voting Algorithm
+    Set a candidate number and a count, traversal the array, if the candidate number is equal to the number in the array then count + 1, if not count - 1, the return is candidate.
+    Time complexity is O(n)
