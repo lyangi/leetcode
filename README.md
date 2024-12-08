@@ -34,3 +34,20 @@ my leetcode
     Boyer-Moore Voting Algorithm
     Set a candidate number and a count, traversal the array, if the candidate number is equal to the number in the array then count + 1, if not count - 1, the return is candidate.
     Time complexity is O(n)
+
+## 189. Rotate Array
+    Type: array
+    Reverse array can use two points, while left < right, change the array value, and in this problem, we need reverse 3 times, reverse(0, len-1), reverse(0, k-1), reverse(k, len-1).
+    Time complexity is O(n)
+    space complexity is O(1)
+
+## 121. 122 Best time to buy and sell stock I II
+    Type: array greedy
+    Set the start is array[0], if profit more than max, add the profit.
+    Time complexity is O(n)
+
+## 55. 45 Jump Game I II
+    Type: array greedy
+    I: Reverse thinking, set goal on the last index, if the forward index can reach to goal, it can jump, iteration to the first index.
+    II: Set a range near to far, and for loop in the range, find the farthest and update the near far value.
+    Time complexity is O(n)
