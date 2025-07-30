@@ -6,7 +6,6 @@ import java.util.Arrays;
 public class Leetcode189 {
 
     public static void rotate(int nums[], int k) {
-        int s = nums.length;
         for (int j = 0; j < k; j++) {
             for (int i = nums.length - 1; i > 0; i--) {
                 int temp = nums[i];
