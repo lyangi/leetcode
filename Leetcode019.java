@@ -6,26 +6,23 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next;
    }
 }
-public class Leetcode19 {
+public class Leetcode019 {
     
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummyNode = new ListNode();
-        dummyNode = head;
-        ListNode p = head;
-        while(p.next != null) {
-            p = p.next;
+        dummyNode.next = head;
+        ListNode left = dummyNode;
+        ListNode right = dummyNode;
+        for (int i = 0; i < n; i++) {
+            right = right.next;
         }
-        int last = p.val;
-        int i = last - n;
-        while(head != null && head.val != i) {
-            head = head.next;
+        while (right.next != null) {
+            left = left.next;
+            right = right.next;
         }
-        if (head != null && head.next.next != null) {
-            head.next = head.next.next;
-        } else if (head != null){
-            head.next = null;
-        }
-        return dummyNode;
+        left.next = left.next.next;
+        return dummyNode.next;
+
     }
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
