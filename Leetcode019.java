@@ -1,13 +1,5 @@
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next;
-   }
-}
 public class Leetcode019 {
-    
+
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummyNode = new ListNode();
         dummyNode.next = head;
@@ -24,6 +16,7 @@ public class Leetcode019 {
         return dummyNode.next;
 
     }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         removeNthFromEnd(head, 1);
