@@ -14,7 +14,7 @@ public class Leetcode322 {
         // }
 
         // int res = dfs(n - 1, coins, amount, memo);
-        // return res == Integer.MAX_VALUE / 2 ? -1 : res;
+        // return res < Integer.MAX_VALUE / 2 ? res : -1;
 
         // int[][] dp = new int[n + 1][amount + 1];
         // Arrays.fill(dp[0], Integer.MAX_VALUE / 2); // if we have 0 coins, any j > 0 is INF
@@ -29,7 +29,7 @@ public class Leetcode322 {
         //          }
         //     }
         // }
-        // return dp[n][amount] == Integer.MAX_VALUE / 2 ? -1 : dp[n][amount];
+        // return dp[n][amount] < Integer.MAX_VALUE / 2 ? dp[n][amount] : -1;
 
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, Integer.MAX_VALUE / 2);
@@ -39,7 +39,7 @@ public class Leetcode322 {
                 dp[j] = Math.min(dp[j], dp[j - x] + 1);
             }
         }
-        return dp[amount] == Integer.MAX_VALUE / 2 ? -1 : dp[amount];
+        return dp[amount] < Integer.MAX_VALUE / 2 ? dp[amount] : -1;
     }
     private int dfs(int i, int[] coins, int c, int[][] memo) {
         // base case
