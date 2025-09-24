@@ -1,4 +1,7 @@
-public class Leetcode42 {
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Leetcode042 {
     public static int trap(int[] height) {
         int n = height.length;
         int water = 0;
@@ -61,6 +64,25 @@ public class Leetcode42 {
                 ans += suf_max - height[r];
                 r--;
             }
+        }
+        return ans;
+    }
+
+    // use stack
+    public int trap4(int[] height) {
+        int n = height.length;
+        Deque<Integer> stack = new ArrayDeque<>();
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            int h = height[i];
+            while (!stack.isEmpty() && height[stack.peek()] <= h) {
+                int bottomH = height[stack.pop()];
+                if (stack.isEmpty()) break;
+                int left = stack.peek();
+                int dh = Math.min(height[left], h) - bottomH;
+                ans += dh * (i - left - 1);
+            }
+            stack.push(i);
         }
         return ans;
     }
